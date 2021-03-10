@@ -130,10 +130,6 @@ function getPlace(array, number) {
 }
 
 
-console.log(getPlace([60, 30, 10], 90))
-console.log(getPlace([20, 15, 30, 90], 10))
-
-
 
 
 
