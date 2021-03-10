@@ -59,6 +59,61 @@ function averageStringLength(array) {
 }
 
 // Problem 5: firstPunctuationIndex
+// returns the index of the first appearance of a period, question mark, or exclamation mark in the  string
+// if no punctuation return -1
+
+/*function firstPunctuationIndex(string) {
+    let periodIndex = string.indexOf('.');
+    let questionIndex = string.indexOf('?');
+    let exclaimIndex = string.indexOf('!');
+
+    if (exclaimIndex < periodIndex && exclaimIndex < questionIndex) {
+        return exclaimIndex;
+    } 
+
+    if (periodIndex < questionIndex && periodIndex < exclaimIndex) {
+        return periodIndex;
+    } 
+    
+    if (questionIndex < periodIndex && questionIndex < exclaimIndex) {
+        return questionIndex;
+    } 
+    
+    else {
+        return -1;
+    }
+}*/
+
+function firstPunctuationIndex(string) {
+    let punctuationIndices= [];
+    let lowestIndex = [];
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === '.') {
+            punctuationIndices.push(i)
+        } else if (string[i] === '?') {
+            punctuationIndices.push(i);
+        } else if (string[i] === '!') {
+            punctuationIndices.push(i);
+        }
+    }
+    
+    if (punctuationIndices.length === 0) {
+        return -1
+    } else {
+        return punctuationIndices[0];
+    }
+}   
+
+
+console.log(firstPunctuationIndex('wow. goodness me!'))
+console.log(firstPunctuationIndex('alright alright alright'))
+
+
+
+
+
+
+
 
 
 // ┌─────────────────────────────────────┐
