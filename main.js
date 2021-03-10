@@ -62,31 +62,10 @@ function averageStringLength(array) {
 // returns the index of the first appearance of a period, question mark, or exclamation mark in the  string
 // if no punctuation return -1
 
-/*function firstPunctuationIndex(string) {
-    let periodIndex = string.indexOf('.');
-    let questionIndex = string.indexOf('?');
-    let exclaimIndex = string.indexOf('!');
-
-    if (exclaimIndex < periodIndex && exclaimIndex < questionIndex) {
-        return exclaimIndex;
-    } 
-
-    if (periodIndex < questionIndex && periodIndex < exclaimIndex) {
-        return periodIndex;
-    } 
-    
-    if (questionIndex < periodIndex && questionIndex < exclaimIndex) {
-        return questionIndex;
-    } 
-    
-    else {
-        return -1;
-    }
-}*/
-
 function firstPunctuationIndex(string) {
     let punctuationIndices= [];
     let lowestIndex = [];
+    
     for (let i = 0; i < string.length; i++) {
         if (string[i] === '.') {
             punctuationIndices.push(i)
@@ -96,7 +75,7 @@ function firstPunctuationIndex(string) {
             punctuationIndices.push(i);
         }
     }
-    
+
     if (punctuationIndices.length === 0) {
         return -1
     } else {
@@ -104,13 +83,55 @@ function firstPunctuationIndex(string) {
     }
 }   
 
+// Problem 6: getPlace
+// takes in two parameters, a sorted list of high scores(highest to lowest) and a new score.
+// should return a human readable string indicating which place the new score fits into the given list of high scores
 
-console.log(firstPunctuationIndex('wow. goodness me!'))
-console.log(firstPunctuationIndex('alright alright alright'))
+function getPlace(array, number) {
+    //adds the latest score to the array of scores
+    array.push(number);
+    // sorts the new array of scores from highest to lowest
+    let newScores = array.sort((a, b) => b - a);
+    // sets rankNumber to the position number it is (highest Score being 1 and so on)
+    let rankNumber = newScores.indexOf(number) + 1;
+    
+    switch (rankNumber) {
+        case 1:
+            return '1st place';
+            break;
+        case 2:
+            return '2nd place';
+            break;
+        case 3:
+            return '3rd place';
+            break;
+        case 4:
+            return'4th place';
+            break;
+        case 5:
+            return '5th place';
+            break;
+        case 6:
+            return '6th place';
+            break;
+        case 99:
+            return '99th place';
+            break;
+        case 101:
+            return'101st place';
+            break;
+        case 102:
+            return '102nd place';
+            break;
+        case 103:
+            return '103rd place';
+            break;
+    }
+}
 
 
-
-
+console.log(getPlace([60, 30, 10], 90))
+console.log(getPlace([20, 15, 30, 90], 10))
 
 
 
