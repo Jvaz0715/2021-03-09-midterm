@@ -43,6 +43,24 @@ function numOddValues (array) {
     return numOfOdds;
 }
 
+// Problem 4: averageStringLength
+// takes in an array of strings and returns the average length of the strings
+
+function averageStringLength(array) {
+    if (array.length === 0) {
+        return 0;
+    }
+    let totalStringLength = 0;
+    for (let i = 0; i < array.length; i++) {
+        let stringLength = array[i].length;
+        totalStringLength = totalStringLength + stringLength;
+    }
+    return totalStringLength / array.length;
+}
+
+// Problem 5: firstPunctuationIndex
+
+
 // ┌─────────────────────────────────────┐
 // │ Do not modify code below this line. │
 // └─────────────────────────────────────┘
