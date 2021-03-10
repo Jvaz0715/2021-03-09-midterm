@@ -2,7 +2,7 @@
 // │ Your code here! │	
 // └─────────────────┘
 
-//Problem: 1 ageToAbilities
+//Problem 1: ageToAbilities
 //takes person's age returns message of driving ability
 
 function ageToAbilities(age) {
@@ -17,6 +17,20 @@ function ageToAbilities(age) {
     }
 }
 
+//Problem 2: oddIndices
+//takes array and returns only the ones at odd indices.
+
+function oddIndices(array) {
+    let oddIndicesOnly = [];
+    for (let i = 1; i < array.length; i++) {
+        if(i % 2 !== 0){
+        oddIndicesOnly.push(array[i])
+        }
+    }
+    return oddIndicesOnly;
+}
+
+//console.log(oddIndices([0, 2, 4, 6, 8, 10]))
 
 
 // ┌─────────────────────────────────────┐
