@@ -30,8 +30,18 @@ function oddIndices(array) {
     return oddIndicesOnly;
 }
 
-//console.log(oddIndices([0, 2, 4, 6, 8, 10]))
+// Problem 3: numOddValues
+// takes in an array of numbers and returns the quantity of odd values in that array
 
+function numOddValues (array) {
+    let numOfOdds = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 !== 0) {
+            numOfOdds += 1;
+        }
+    }
+    return numOfOdds;
+}
 
 // ┌─────────────────────────────────────┐
 // │ Do not modify code below this line. │
